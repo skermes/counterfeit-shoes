@@ -28,6 +28,8 @@
     "underscore": "^1.6.0",
     "underscore.string": "^2.3.3",
     "vinyl-source-stream": "^0.1.1",
-    "watchify": "^0.10.2"
+    "watchify": "^0.10.2",
+    "firebase-client": "tinj/firebase-client",
+    "firebase-simple-login": "tinj/firebase-simple-login"
   }
 }
