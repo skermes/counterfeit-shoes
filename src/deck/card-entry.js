@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var EntryDescription = require('./entry-description'),
     EntryPortrait = require('./entry-portrait'),
     RemoveCard = require('./remove-card');

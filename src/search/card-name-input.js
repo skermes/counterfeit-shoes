@@ -1,5 +1,8 @@
 /** @jsx React.DOM */
 
+var React = require('react'),
+    _ = require('underscore');
+
 var Dispatcher = require('../dispatcher'),
     Button = require('../shared/button');
 

@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var Dispatcher = require('../dispatcher');
 
 var Store = function(options) {

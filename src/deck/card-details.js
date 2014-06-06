@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var CloseCardDetailsButton = require('./close-card-details-button'),
     ShiftCardFocusButton = require('./shift-card-focus-button');
 

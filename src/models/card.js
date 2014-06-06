@@ -1,3 +1,5 @@
+var _s = require('underscore.string');
+
 var urlName = function(name) {
   return name.toLocaleLowerCase().replace(/[^a-z]/g, '');
 };
@@ -23,7 +25,7 @@ var combinedUrl = function(name) {
 // We can't fix all of these, but we can do our best to normalize on something
 // close to what the canonical card name is.
 var guessName = function(name) {
-  return _.str.titleize(name.replace(/[^a-zA-Z ',]/g, ''));
+  return _s.titleize(name.replace(/[^a-zA-Z ',]/g, ''));
 }
 
 var Card = function(name) {

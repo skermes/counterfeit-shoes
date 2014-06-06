@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var AddCardButton = require('./add-card-button');
 
 var AddCardToDeck = React.createClass({

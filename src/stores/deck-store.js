@@ -1,6 +1,7 @@
-var Store = require('./store');
+var _ = require('underscore');
 
-var Card = require('../models/card');
+var Store = require('./store'),
+    Card = require('../models/card');
 
 var DeckStore = new Store({
   initialize: function() {

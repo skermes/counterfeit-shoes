@@ -1,7 +1,9 @@
 /** @jsx React.DOM */
 
-var CardNameInput = require('./card-name-input');
-var CardSearchResult = require('./card-search-result');
+var React = require('react');
+
+var CardNameInput = require('./card-name-input'),
+    CardSearchResult = require('./card-search-result');
 
 var CardSearch = React.createClass({
   render: function() {

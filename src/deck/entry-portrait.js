@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var Dispatcher = require('../dispatcher');
 
 var EntryPortrait = React.createClass({

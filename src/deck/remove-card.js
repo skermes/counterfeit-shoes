@@ -1,5 +1,8 @@
 /** @jsx React.DOM */
 
+var React = require('react'),
+    _ = require('underscore');
+
 var RemoveCardButton = require('./remove-card-button');
 
 var RemoveCard = React.createClass({

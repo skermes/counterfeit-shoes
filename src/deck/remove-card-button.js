@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var Button = require('../shared/button');
 
 var RemoveCardButton = React.createClass({

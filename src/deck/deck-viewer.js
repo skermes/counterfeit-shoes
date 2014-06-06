@@ -1,5 +1,8 @@
 /** @jsx React.DOM */
 
+var React = require('react'),
+    _ = require('underscore');
+
 var DeckStore = require('../stores/deck-store'),
     DeckViewStateStore = require('../stores/deck-viewstate-store'),
     CardEntry = require('./card-entry'),

@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var EntryDescription = React.createClass({
   render: function() {
     return (

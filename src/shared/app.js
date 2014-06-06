@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var Toolbar = require('../toolbar/toolbar'),
     DeckViewer = require('../deck/deck-viewer');
 

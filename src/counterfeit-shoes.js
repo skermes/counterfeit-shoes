@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var App = require('./shared/app');
 
 document.addEventListener('DOMContentLoaded', function() {

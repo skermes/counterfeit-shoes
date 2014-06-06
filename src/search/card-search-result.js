@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var React = require('react');
+
 var SearchResultStore = require('../stores/search-result-store'),
     AddCardToDeck = require('./add-card-to-deck');
 
