@@ -1,0 +1,9 @@
+{
+  "firebase": "counterfeit-shoes",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    ".*",
+    "**/node_modules/**"
+  ]
+}
