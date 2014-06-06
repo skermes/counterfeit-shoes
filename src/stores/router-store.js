@@ -2,6 +2,9 @@ var Store = require('./store');
 
 var RouterStore = new Store({
   initialize: function() {
+    window.onpopstate = function() {
+      this.trigger();
+    }.bind(this);
   },
 
   pathSegments: function() {
