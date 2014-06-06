@@ -1,0 +1,79 @@
+.search {
+  position: relative;
+  width: 31em;
+  margin: auto;
+
+  input {
+    width: 20em;
+    outline: none;
+    padding: 0.2rem;
+    border: 1px solid darken(#82AEC8, 30%);
+  }
+
+  .clear-search {
+    background-color: transparent;
+    border-color: transparent;
+    color: #CCC;
+    position: relative;
+    left: -2rem;
+    margin: 0;
+    border-radius: 0;
+    border-image: 0;
+    height: 1.6rem;
+
+     &:active {
+      transform: none;
+      border: none;
+    }
+  }
+
+  .none, .in-progress, .succeeded, .failed {
+    position: absolute;
+    margin-left: -1rem;
+    margin-top: -0.1rem;
+    font-family: 'Luckiest Guy';
+    display: inline-block;
+  }
+
+  .succeeded {
+    color: green;
+  }
+
+  .failed {
+    color: lighten(#A30006, 10%);
+    font-size: 2.5rem;
+    margin-top: -0.6rem;
+  }
+
+  .in-progress {
+    font-size: 2.5rem;
+    margin-top: -0.4rem;
+    color: darken(#82AEC8, 30%);;
+
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  button {
+    @dark: darken(#82AEC8, 30%);
+    @light: white;
+
+    margin-right: 0.4rem;
+
+    background-color: @light;
+    border-color: @dark;
+    color: @dark;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
