@@ -2,9 +2,9 @@
 
 var React = require('react');
 
-var Toolbar = require('../toolbar/toolbar'),
-    DeckViewer = require('../deck/deck-viewer'),
-    RouterStore = require('../stores/router-store');
+var RouterStore = require('../stores/router-store'),
+    FourOhFourPage = require('./four-oh-four-page'),
+    EditPage = require('./edit-page');
 
 var App = React.createClass({
   getInitialState: function() {
@@ -20,10 +20,14 @@ var App = React.createClass({
   },
 
   render: function() {
+    var page = <FourOhFourPage />;
+    if (this.state.pathSegments[0] === '') {
+      page = <EditPage />;
+    }
+
     return (
       <div className="container">
-        <Toolbar />
-        <DeckViewer />
+        {page}
       </div>
     );
   },
