@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var App = require('./shared/app');
+var App = require('./main/app');
 
 document.addEventListener('DOMContentLoaded', function() {
   React.renderComponent(<App />,
