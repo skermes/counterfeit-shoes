@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "browserify": "^4.1.8",
+    "envify": "^1.2.1",
     "gulp": "^3.7.0",
     "gulp-autoprefixer": "0.0.7",
     "gulp-cache": "^0.1.11",
@@ -21,6 +22,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-util": "^2.2.16",
     "path": "^0.4.9",
+    "react": "^0.10.0",
     "reactify": "^0.13.1",
     "underscore": "^1.6.0",
     "underscore.string": "^2.3.3",
