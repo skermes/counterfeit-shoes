@@ -9,6 +9,10 @@ var DeckStore = new Store({
   },
 
   dispatches: {
+    'deck:new': function() {
+      this.deck = {};
+      this.trigger();
+    },
     'deck:addCard': function(card, quantity) {
       if (_.has(this.deck, card.key)) {
         this.deck[card.key].quantity += quantity;

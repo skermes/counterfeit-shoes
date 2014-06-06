@@ -9,7 +9,10 @@ var RouterStore = new Store({
   },
 
   dispatches: {
-
+    'deck:new': function() {
+      window.history.pushState({}, '', '/');
+      this.trigger();
+    }
   }
 });
 
