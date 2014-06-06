@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var Toolbar = require('../toolbar/toolbar'),
+var Toolbar = require('../shared/toolbar'),
     DeckViewer = require('../deck/deck-viewer');
 
 var EditPage = React.createClass({
