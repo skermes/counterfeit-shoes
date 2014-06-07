@@ -67,7 +67,9 @@ var DeckStore = new Store({
         deckRef.on('value', function(snapshot) {
           this.deck = snapshot.val();
           this.trigger();
-        }.bind(this))
+        }, function(error) {
+          console.log(error);
+        }, this)
       }
     }
   }
