@@ -10,7 +10,7 @@ var DeckViewPage = React.createClass({
     return (
       <div className="deck-view-page">
         <Toolbar />
-        <DeckViewer />
+        <DeckViewer readOnly={true} />
       </div>
     );
   }

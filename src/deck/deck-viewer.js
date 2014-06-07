@@ -40,8 +40,8 @@ var DeckViewer = React.createClass({
 
     var entries = _.map(this.state.deck, function(entry) {
       return <CardEntry card={entry.card} quantity={entry.quantity}
-                        key={entry.card.key} />
-    });
+                        key={entry.card.key} readOnly={this.props.readOnly} />
+    }, this);
 
     if (this.state.focusedCard) {
       var keys = _.keys(this.state.deck);

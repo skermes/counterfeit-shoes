@@ -17,7 +17,7 @@ var EditPage = React.createClass({
     return (
       <div className="edit-page">
         <Toolbar contents={toolbarContents} />
-        <DeckViewer />
+        <DeckViewer readOnly={false} />
       </div>
     );
   }
