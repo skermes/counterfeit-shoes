@@ -4,7 +4,8 @@ var React = require('react');
 
 var RouterStore = require('../stores/router-store'),
     FourOhFourPage = require('./four-oh-four-page'),
-    EditPage = require('./edit-page');
+    EditPage = require('./edit-page'),
+    DeckViewPage = require('./deck-view-page');
 
 var App = React.createClass({
   getInitialState: function() {
@@ -23,6 +24,8 @@ var App = React.createClass({
     var page = <FourOhFourPage />;
     if (this.state.pathSegments[0] === '') {
       page = <EditPage />;
+    } else if (this.state.pathSegments[0] === 'deck') {
+      page = <DeckViewPage />;
     }
 
     return (

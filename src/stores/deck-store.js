@@ -1,7 +1,14 @@
-var _ = require('underscore');
+var _ = require('underscore'),
+    Firebase = require('firebase-client');
 
 var Store = require('./store'),
-    Card = require('../models/card');
+    Card = require('../models/card'),
+    Dispatcher = require('../dispatcher');
+
+var FIREBASE_ROOT_URL = 'https://counterfeit-shoes.firebaseio.com/';
+var decksRef = new Firebase(FIREBASE_ROOT_URL).child('decks');
+
+var deckRef = undefined;
 
 var DeckStore = new Store({
   initialize: function() {
@@ -34,6 +41,19 @@ var DeckStore = new Store({
       }
 
       this.trigger();
+    },
+    'deck:save': function() {
+      deckRef = decksRef.push(this.deck);
+      Dispatcher.send('deck:saved', [deckRef.name()]);
+    },
+    'pathChanged': function(segments) {
+      if (segments[0] === 'deck') {
+        deckRef = decksRef.child(segments[1]);
+        deckRef.once('value', function(snapshot) {
+          this.deck = snapshot.val();
+          this.trigger();
+        }.bind(this))
+      }
     }
   }
 });

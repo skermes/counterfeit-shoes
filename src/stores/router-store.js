@@ -21,6 +21,10 @@ var RouterStore = new Store({
     'deck:new': function() {
       window.history.pushState({}, '', '/');
       this.trigger();
+    },
+    'deck:saved': function(id) {
+      window.history.pushState({}, '', '/deck/' + id);
+      this.trigger();
     }
   }
 });
