@@ -43,7 +43,7 @@ var buildScripts = function(watch) {
   var rebundle = function() {
     gutil.log('Building js with browserify');
 
-    var stream = bundler.bundle({debug: false});
+    var stream = bundler.bundle({debug: true});
     stream.on('error', logAndEnd('Browserify'));
 
     stream = stream.pipe(source('counterfeit-shoes.js'));
