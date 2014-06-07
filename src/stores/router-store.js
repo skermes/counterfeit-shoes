@@ -7,10 +7,6 @@ var RouterStore = new Store({
       Dispatcher.send('pathChanged', [this.pathSegments()]);
       this.trigger();
     }.bind(this);
-
-    // Some browsers fire a popstate on page load, some don't.  Store functions
-    // should be idempotent, so sending this twice shouldn't be a problem.
-    Dispatcher.send('pathChanged', [this.pathSegments()]);
   },
 
   pathSegments: function() {
@@ -18,6 +14,11 @@ var RouterStore = new Store({
   },
 
   dispatches: {
+    // Some browsers fire a popstate on page load, some don't.  Store functions
+    // should be idempotent, so sending this twice shouldn't be a problem.
+    'app:start': function() {
+      Dispatcher.send('pathChanged', [this.pathSegments()]);
+    },
     'deck:new': function() {
       window.history.pushState({}, '', '/');
       this.trigger();
