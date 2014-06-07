@@ -17,8 +17,19 @@ var DeckStore = new Store({
 
   dispatches: {
     'deck:new': function() {
+      if (deckRef) {
+        deckRef.off('value');
+        deckRef = undefined;
+      }
+
       this.deck = {};
       this.trigger();
+    },
+    'deck:edit': function() {
+      if (deckRef) {
+        deckRef.off('value');
+        deckRef = undefined;
+      }
     },
     'deck:addCard': function(card, quantity) {
       if (_.has(this.deck, card.key)) {
@@ -44,12 +55,16 @@ var DeckStore = new Store({
     },
     'deck:save': function() {
       deckRef = decksRef.push(this.deck);
+      deckRef.on('value', function(snapshot) {
+        this.deck = snapshot.val();
+        this.trigger();
+      }.bind(this))
       Dispatcher.send('deck:saved', [deckRef.name()]);
     },
     'pathChanged': function(segments) {
       if (segments[0] === 'deck') {
         deckRef = decksRef.child(segments[1]);
-        deckRef.once('value', function(snapshot) {
+        deckRef.on('value', function(snapshot) {
           this.deck = snapshot.val();
           this.trigger();
         }.bind(this))
