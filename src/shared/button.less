@@ -3,19 +3,23 @@ button {
   font-family: 'Luckiest Guy';
   font-size: 1.5rem;
 
+  cursor: pointer;
+  outline: none;
+
+  border: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.bordered-button() {
   border: 1px solid;
   border-radius: 0.2rem;
   border-bottom-width: 0.3rem;
 
-  cursor: pointer;
-  outline: none;
-
   &:active {
     transform: translate(0, 0.2rem);
     border-bottom-width: 0.1rem;
-  }
-
-  &::-moz-focus-inner {
-    border: 0;
   }
 }

@@ -69,6 +69,7 @@
       display: none;
 
       button {
+        .bordered-button();
         @dark: darken(#A30006, 10%);
         @light: lighten(#A30006, 10%);
 
@@ -108,13 +109,7 @@
 
     .close, .shift-focus {
       color: lighten(#82AEC8, 10%);
-      border-color: transparent;
       background-color: transparent;
-      border-width: 0;
-
-      &:active {
-        transform: none;
-      }
     }
 
     .close {
