@@ -13,7 +13,9 @@ var FourOhFourPage = React.createClass({
           Well, since you're already here, why don't you go ahead and
         </p>
 
-        <Button action="deck:new" content="build a new deck" />
+        <Button action="deck:new">
+          build a new deck
+        </Button>
       </div>
     );
   }

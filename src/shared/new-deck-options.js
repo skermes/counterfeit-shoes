@@ -9,8 +9,12 @@ var NewDeckOptions = React.createClass({
     return (
       <span className="new-deck-options">
         <span>Make new deck</span>
-        <Button action="deck:edit" content="based on this deck" />
-        <Button action="deck:new" content="from scratch" />
+        <Button action="deck:edit">
+          based on this deck
+        </Button>
+        <Button action="deck:new">
+          from scratch
+        </Button>
       </span>
     );
   }

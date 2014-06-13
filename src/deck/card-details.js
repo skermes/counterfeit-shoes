@@ -13,12 +13,20 @@ var CardDetails = React.createClass({
 
     var prevButton = undefined;
     if (this.props.prevCard) {
-      prevButton = <ShiftCardFocusButton card={this.props.prevCard} content="<" />;
+      prevButton = (
+        <ShiftCardFocusButton card={this.props.prevCard}>
+          &lt;
+        </ShiftCardFocusButton>
+      );
     }
 
     var nextButton = undefined;
     if (this.props.nextCard) {
-      var nextButton = <ShiftCardFocusButton card={this.props.nextCard} content=">" />;
+      var nextButton = (
+        <ShiftCardFocusButton card={this.props.nextCard}>
+          &gt;
+        </ShiftCardFocusButton>
+      );
     }
 
     return (

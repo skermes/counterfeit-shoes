@@ -8,8 +8,9 @@ var RemoveCardButton = React.createClass({
   render: function() {
     return (
       <Button action="deck:removeCard"
-              args={[this.props.card, this.props.quantity]}
-              content={'-' + this.props.quantity} />
+              args={[this.props.card, this.props.quantity]}>
+        -{this.props.quantity}
+      </Button>
     );
   }
 });

@@ -11,8 +11,10 @@ CardNameInput = React.createClass({
     var onchange = _.debounce(this._onChange, 700);
     return (
       <input type="text" onChange={onchange} placeholder="search">
-        <Button content={"\u00D7"} className="clear-search" action="search:clear"
-                onClick={this._clearText} />
+        <Button className="clear-search" action="search:clear"
+                onClick={this._clearText}>
+          {"\u00D7"}
+        </Button>
       </input>
     );
   },

@@ -8,7 +8,9 @@ var ShiftCardFocusButton = React.createClass({
   render: function() {
     return (
       <Button action="cardEntry:changeFocus" args={[this.props.card]}
-              content={this.props.content} className="shift-focus" />
+              className="shift-focus">
+        {this.props.children}
+      </Button>
     );
   }
 });

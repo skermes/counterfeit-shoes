@@ -8,7 +8,7 @@ var Button = React.createClass({
   render: function() {
     return (
       <button onClick={this._click} className={this.props.className}>
-        {this.props.content}
+        {this.props.children}
       </button>
     );
   },
