@@ -17,14 +17,7 @@
     position: relative;
     left: -2rem;
     margin: 0;
-    border-radius: 0;
-    border-image: 0;
     height: 1.6rem;
-
-     &:active {
-      transform: none;
-      border: none;
-    }
   }
 
   .none, .in-progress, .succeeded, .failed {
@@ -52,7 +45,7 @@
     animation-timing-function: linear;
   }
 
-  button {
+  .succeeded button {
     .bordered-button();
     @dark: darken(#82AEC8, 30%);
     @light: white;
