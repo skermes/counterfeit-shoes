@@ -9,14 +9,12 @@ var Toolbar = require('../shared/toolbar'),
 
 var EditPage = React.createClass({
   render: function() {
-    var toolbarContents = [
-      <CardSearch />,
-      <SaveButton />
-    ];
-
     return (
       <div className="edit-page">
-        <Toolbar contents={toolbarContents} />
+        <Toolbar>
+          <CardSearch />
+          <SaveButton />
+        </Toolbar>
         <DeckViewer readOnly={false} />
       </div>
     );

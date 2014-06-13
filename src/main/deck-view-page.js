@@ -8,13 +8,11 @@ var DeckViewer = require('../deck/deck-viewer'),
 
 var DeckViewPage = React.createClass({
   render: function() {
-    var toolbarContents = [
-      <NewDeckOptions />
-    ];
-
     return (
       <div className="deck-view-page">
-        <Toolbar contents={toolbarContents} />
+        <Toolbar>
+          <NewDeckOptions />
+        </Toolbar>
         <DeckViewer readOnly={true} />
       </div>
     );

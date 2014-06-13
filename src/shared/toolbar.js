@@ -6,7 +6,7 @@ var Toolbar = React.createClass({
   render: function() {
     return (
       <div className="toolbar">
-        {this.props.contents}
+        {this.props.children}
       </div>
     );
   }
