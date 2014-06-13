@@ -17,19 +17,13 @@ var DeckStore = new Store({
 
   dispatches: {
     'deck:new': function() {
-      if (deckRef) {
-        deckRef.off('value');
-        deckRef = undefined;
-      }
+      this._clearDeckRef();
 
       this.deck = {};
       this.trigger();
     },
     'deck:edit': function() {
-      if (deckRef) {
-        deckRef.off('value');
-        deckRef = undefined;
-      }
+      this._clearDeckRef();
     },
     'deck:addCard': function(card, quantity) {
       if (_.has(this.deck, card.key)) {
@@ -55,23 +49,28 @@ var DeckStore = new Store({
     },
     'deck:save': function() {
       deckRef = decksRef.push(this.deck);
-      deckRef.on('value', function(snapshot) {
-        this.deck = snapshot.val();
-        this.trigger();
-      }.bind(this))
+      this._listenToDeckRef();
       Dispatcher.send('deck:saved', [deckRef.name()]);
     },
     'pathChanged': function(segments) {
       if (segments[0] === 'deck') {
         deckRef = decksRef.child(segments[1]);
-        deckRef.on('value', function(snapshot) {
-          this.deck = snapshot.val();
-          this.trigger();
-        }, function(error) {
-          console.log(error);
-        }, this)
+        this._listenToDeckRef();
       }
     }
+  },
+
+  _clearDeckRef: function() {
+    if (deckRef) {
+      deckRef.off('value');
+      deckRef = undefined;
+    }
+  },
+  _listenToDeckRef: function() {
+    deckRef.on('value', function(snapshot) {
+      this.deck = snapshot.val();
+      this.trigger();
+    }, this);
   }
 });
 
