@@ -59,9 +59,11 @@ var DeckViewer = React.createClass({
       var nextEntry = this.state.deck[keys[focusedIndex + 1]];
       var nextCard = nextEntry ? nextEntry.card : undefined;
 
+      // No card key can start with a hyphen, so "-details" should never
+      // conflict.
       var details = <CardDetails url={this.state.focusedCard.combinedUrl}
                                  arrowLeft={arrowLeft} prevCard={prevCard}
-                                 nextCard={nextCard} />;
+                                 nextCard={nextCard} key="-details" />;
       entries.splice(lastIndexInFocusedRow, 0, details);
     }
 
